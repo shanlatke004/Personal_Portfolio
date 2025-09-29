@@ -1,237 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Shantanu Latke - Portfolio</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link rel="stylesheet" href="./style.css"/>
+      <link rel="stylesheet" href="./mediaqueries.css"/>
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Shantanu Latke</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Shantanu Latke</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/IMG_2804.png" alt="Shantanu Latke profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Shantanu Latke, BCS</h1>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('assets/ShantanuLatkeResume.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/shantanu-latke-0437a322b'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/shanlatke004'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/IMG_2677.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>1 year <br />Quality Assurance Intern</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>BCS Bachelors of <br />Computer Science Degree</p>
-            </div>
+      <!-- Welcome Modal -->
+      <div id="welcomeModal" class="welcome-modal">
+          <div class="modal-content">
+              <h2>Welcome! 👋</h2>
+              <p>I'd love to customize your experience. How would you describe yourself?</p>
+              <div class="role-buttons">
+                  <button class="role-btn" onclick="selectRole('recruiter')">
+                      <i class="fas fa-briefcase"></i> Recruiter/HR
+                  </button>
+                  <button class="role-btn" onclick="selectRole('colleague')">
+                      <i class="fas fa-code"></i> Fellow Developer
+                  </button>
+                  <button class="role-btn" onclick="selectRole('student')">
+                      <i class="fas fa-graduation-cap"></i> Student
+                  </button>
+                  <button class="role-btn" onclick="selectRole('visitor')">
+                      <i class="fas fa-user"></i> Just Browsing
+                  </button>
+              </div>
           </div>
-          <div class="text-container">
-            <p>I am highly motivated and versatile candidate with a strong academic background in both Business Administration and Computer Science from the University of New Brunswick. With a minor in Business Administration focusing on Finance, I have gained valuable insights into corporate finance, investments, and financial markets.</p>
-            <p><br/>In addition to my academic achievements, I have demonstrated practical skills through internships, notably as a Quality Assurance Intern at GlobalVision, where I utilized Python for document creation automation and streamlined the quality assurance process.</p>
-            <p><br/>My technical proficiency includes programming languages such as Java, Python, and PHP, along with hands-on experience in MySQL, HTML/CSS, and various development tools. My proactive approach is evident in leadership roles, such as overseeing housekeeping staff at UNB Summer Hotel and leading basketball initiatives at Gems Wellington Academy. I bring a unique blend of financial acumen, technical expertise, and leadership skills, making me a valuable asset for any team.</p>
-          </div>
-        </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Quality Assurance Intern</h2>
-            <div class="text-container">
-              <p>Used Python to automate document creation which incorporates final review of software inspection of files.<br/><br/></p>
-              <p>Developed test cases to ensure required parameters are met to a high accuracy.<br/><br/></p>
-              <p>Discussed and assisted in developing methods of streamlining the quality assurance process.</p>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Senior Housekeeping Staff/Senior Staff</h2>
-            <div class="text-container">
-              <p>Engaged with senior leadership to plan the overall running of the summer hotel.<br/><br/></p>
-              <p>Assisted in overall hotel planning for over 1000 guests for the duration of the hotel.<br/><br/></p>
-              <p>Led a team for housekeeping duties.<br/><br/></p>
-              <p>Engaged in customer service duties to facilitate a smooth and enjoyable experience.<br/><br/></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/VMS.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Visitor Management System</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/shanlatke004/VisitorManagementSystem'"
-              >
-                Github
+
+      <!-- Navigation -->
+      <nav class="navbar">
+          <div class="nav-container">
+              <div class="logo" onclick="showPage('home')">Shantanu Latke</div>
+              <ul class="nav-menu">
+                  <li class="nav-item"><a href="#" onclick="showPage('home')" class="active">Home</a></li>
+                  <li class="nav-item"><a href="#" onclick="showPage('about')">About</a></li>
+                  <li class="nav-item"><a href="#" onclick="showPage('experience')">Experience</a></li>
+                  <li class="nav-item"><a href="#" onclick="showPage('projects')">Projects</a></li>
+                  <li class="nav-item"><a href="#" onclick="showPage('contact')">Contact</a></li>
+              </ul>
+              <button class="theme-toggle" onclick="toggleTheme()">
+                  <i class="fas fa-moon"></i>
               </button>
-            </div>
+              <div class="hamburger" onclick="toggleMenu()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/web-scraping.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Web Scrapping</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/shanlatke004/Web-Scrapping-and-Data-Analysis-'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:shanlatke@gmail.com">shanlatke@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/shantanu-latke-0437a322b/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
       </nav>
-      <p> 2024 Shantanu Latke. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+
+      <!-- Home Page -->
+      <div id="home" class="page active">
+          <div class="container">
+              <div class="hero">
+                  <div class="hero-content">
+                      <p class="greeting">Hello, I'm</p>
+                      <h1>Shantanu Latke</h1>
+                      <p class="subtitle">Technical Analyst & Software Developer</p>
+                      <div class="cta-buttons">
+                          <a href="#" class="btn btn-primary" onclick="downloadCV()">Download Resume</a>
+                          <a href="#" class="btn btn-secondary" onclick="showPage('contact')">Get In Touch</a>
+                      </div>
+                      <div class="social-links">
+                          <a href="https://linkedin.com/in/shantanu-latke-0437a322b" target="_blank">
+                              <i class="fab fa-linkedin-in"></i>
+                          </a>
+                          <a href="https://github.com/shanlatke004" target="_blank">
+                              <i class="fab fa-github"></i>
+                          </a>
+                          <a href="mailto:shanlatke@gmail.com">
+                              <i class="fas fa-envelope"></i>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="hero-image">
+                      <img src="/assets/IMG_1381.jpeg" alt="Profile" class="profile-img">
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- About Page -->
+      <div id="about" class="page">
+          <div class="container">
+              <div class="page-title">
+                  <h1>About Me</h1>
+                  <p>Get to know more about my background and skills</p>
+              </div>
+              <div class="about-content">
+                  <div class="about-image">
+                      <img src=./assets/IMG_1451.JPG alt="About" class="about-img">
+                  </div>
+                  <div class="about-text">
+                      <h2>My Story</h2>
+                      <p>I am a highly motivated and versatile professional with a strong academic background in both Business Administration and Computer Science from the University of New Brunswick. With a minor in Business Administration focusing on Finance, I have gained valuable insights into corporate finance, investments, and financial markets.</p>
+                      <p>In addition to my academic achievements, I have demonstrated practical skills through internships, notably as a Quality Assurance Intern at GlobalVision, where I utilized Python for document creation automation and streamlined the quality assurance process.</p>
+                      <p>My technical proficiency includes programming languages such as Java, Python, and PHP, along with hands-on experience in MySQL, HTML/CSS, and various development tools. I bring a unique blend of financial acumen, technical expertise, and leadership skills.</p>
+                  </div>
+              </div>
+              <div class="stats-grid">
+                  <div class="stat-card">
+                      <i class="fas fa-graduation-cap"></i>
+                      <h3>Education</h3>
+                      <p>BCS - Computer Science<br>University of New Brunswick</p>
+                      <h4>Specialization</h4>
+                      <p>Business Administration<br>Finance Minor</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Experience Page -->
+      <div id="experience" class="page">
+          <div class="container">
+              <div class="page-title">
+                  <h1>My Experience</h1>
+                  <p>A timeline of my professional journey</p>
+              </div>
+              <div class="experience-timeline">
+                  <div class="timeline-line"></div>
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-content">
+                          <h3>Technical Analyst</h3>
+                          <h4>J.D Irving</h4>
+                          <div class="date">May 2024 - Present</div>
+                          <p>Designed and implemented an incident-tracking system, providing real-time visibility into support tickets for <Strong>50+ users</Strong> and driving a <strong>60% reduction</strong> in mean time to resolution.</p>
+                          <p>Automated weekly reporting using Microsoft Power Automate, <strong>saving 5+ hours of manual effort</strong> per week and improving stakeholder visibility.</p>
+                          <p>Coordinated alpha testing for two critical applications, documenting over 100 functional and performance test cases.</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-content">
+                          <h3>Quality Assurance Intern</h3>
+                          <h4>GlobalVision</h4>
+                          <div class="date">May 2022 - April 2023</div>
+                          <p>Used Python to automate document creation which incorporates final review of software inspection of files.</p>
+                          <p>Developed test cases to ensure required parameters are met to a high accuracy.</p>
+                          <p>Discussed and assisted in developing methods of streamlining the quality assurance process.</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-content">
+                          <h3>Senior Housekeeping Staff/Senior Staff</h3>
+                          <h4>University of New Brunswick</h4>
+                          <div class="date">May 2023 - August 2023</div>
+                          <p>Engaged with senior leadership to plan the overall running of the summer hotel.</p>
+                          <p>Assisted in overall hotel planning for over 1000 guests for the duration of the hotel.</p>
+                          <p>Led a team for housekeeping duties and engaged in customer service duties to facilitate a smooth and enjoyable experience.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Projects Page -->
+      <div id="projects" class="page">
+          <div class="container">
+              <div class="page-title">
+                  <h1>My Projects</h1>
+                  <p>Explore my recent work and technical achievements</p>
+              </div>
+              <div class="projects-grid">
+                  <div class="project-card" onclick="openProjectModal('vms')">
+                      <div class="project-image">
+                          <i class="fas fa-users"></i>
+                          <div class="project-overlay">
+                              <div class="project-buttons">
+                                  <a href="https://github.com/shanlatke004/VisitorManagementSystem" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                                      <i class="fab fa-github"></i> GitHub
+                                  </a>
+                                  <button class="btn btn-secondary" onclick="openProjectModal('vms'); event.stopPropagation()">
+                                      <i class="fas fa-info-circle"></i> Details
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-content">
+                          <h3>Visitor Management System</h3>
+                          <div class="project-tech">
+                              <span class="tech-tag">Java</span>
+                              <span class="tech-tag">MySQL</span>
+                              <span class="tech-tag">GUI</span>
+                          </div>
+                          <p>A comprehensive system for managing visitors with features for registration, check-in/out, and reporting. Built with Java Swing and MySQL database integration.</p>
+                      </div>
+                  </div>
+                  <div class="project-card" onclick="openProjectModal('webscraping')">
+                      <div class="project-image">
+                          <i class="fas fa-spider"></i>
+                          <div class="project-overlay">
+                              <div class="project-buttons">
+                                  <a href="https://github.com/shanlatke004/Web-Scrapping-and-Data-Analysis-" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                                      <i class="fab fa-github"></i> GitHub
+                                  </a>
+                                  <button class="btn btn-secondary" onclick="openProjectModal('webscraping'); event.stopPropagation()">
+                                      <i class="fas fa-info-circle"></i> Details
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-content">
+                          <h3>Web Scraping & Data Analysis</h3>
+                          <div class="project-tech">
+                              <span class="tech-tag">Python</span>
+                              <span class="tech-tag">BeautifulSoup</span>
+                              <span class="tech-tag">Pandas</span>
+                              <span class="tech-tag">Data Analysis</span>
+                          </div>
+                          <p>Advanced web scraping tool with data analysis capabilities. Extracts, processes, and analyzes web data with interactive visualizations and automated reporting.</p>
+                      </div>
+                  </div>
+                  <div class="project-card" onclick="openProjectModal('portfolio')">
+                      <div class="project-image">
+                          <i class="fas fa-globe"></i>
+                          <div class="project-overlay">
+                              <div class="project-buttons">
+                                  <button class="btn btn-primary" onclick="event.stopPropagation()">
+                                      <i class="fas fa-eye"></i> Live Demo
+                                  </button>
+                                  <button class="btn btn-secondary" onclick="openProjectModal('portfolio'); event.stopPropagation()">
+                                      <i class="fas fa-info-circle"></i> Details
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-content">
+                          <h3>Interactive Portfolio</h3>
+                          <div class="project-tech">
+                              <span class="tech-tag">HTML5</span>
+                              <span class="tech-tag">CSS3</span>
+                              <span class="tech-tag">JavaScript</span>
+                              <span class="tech-tag">Responsive</span>
+                          </div>
+                          <p>Modern, responsive portfolio website with dark mode, interactive animations, and mobile-first design. Features role-based customization and smooth page transitions.</p>
+                      </div>
+                  </div>
+                  <div class="project-card" onclick="openProjectModal('Enhanced_Stock_Analysis')">
+                      <div class="project-image">
+                          <i class="fas fa-users"></i>
+                          <div class="project-overlay">
+                              <div class="project-buttons">
+                                  <a href="https://github.com/shanlatke004/Stocks_Analysis" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                                      <i class="fab fa-github"></i> GitHub
+                                  </a>
+                                  <button class="btn btn-secondary" onclick="openProjectModal('Enhanced_Stock_Analysis'); event.stopPropagation()">
+                                      <i class="fas fa-info-circle"></i> Details
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="project-content">
+                          <h3>Enhanced Stocks Analysis</h3>
+                          <div class="project-tech">
+                              <span class="tech-tag">Python</span>
+                              <span class="tech-tag">Pandas</span>
+                              <span class="tech-tag">Numpy</span>
+                              <span class="tech-tag">Logging</span>
+                          </div>
+                          <p>A comprehensive system for managing visitors with features for registration, check-in/out, and reporting. Built with Java Swing and MySQL database integration.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Contact Page -->
+      <div id="contact" class="page">
+          <div class="container">
+              <div class="page-title">
+                  <h1>Get In Touch</h1>
+                  <p>Let's connect and discuss opportunities</p>
+              </div>
+              <div class="contact-content">
+                  <div class="contact-info">
+                      <h2>Contact Information</h2>
+                      <div class="contact-item">
+                          <i class="fas fa-envelope"></i>
+                          <div>
+                              <h3>Email</h3>
+                              <a href="mailto:shanlatke@gmail.com">shanlatke@gmail.com</a>
+                          </div>
+                      </div>
+                      <div class="contact-item">
+                          <i class="fab fa-linkedin"></i>
+                          <div>
+                              <h3>LinkedIn</h3>
+                              <a href="https://www.linkedin.com/in/shantanu-latke-0437a322b/" target="_blank">Connect with me</a>
+                          </div>
+                      </div>
+                      <div class="contact-item">
+                          <i class="fab fa-github"></i>
+                          <div>
+                              <h3>GitHub</h3>
+                              <a href="https://github.com/shanlatke004" target="_blank">View my repositories</a>
+                          </div>
+                      </div>
+                      <div class="contact-item">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <div>
+                              <h3>Location</h3>
+                              <p>New Brunswick, Canada</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="contact-form">
+                      <h2>Send me a message</h2>
+                      <form onsubmit="handleFormSubmit(event)">
+                          <div class="form-group">
+                              <label for="name">Name</label>
+                              <input type="text" id="name" name="name" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Email</label>
+                              <input type="email" id="email" name="email" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="subject">Subject</label>
+                              <input type="text" id="subject" name="subject" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="message">Message</label>
+                              <textarea id="message" name="message" required></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                              <i class="fas fa-paper-plane"></i> Send Message
+                          </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Project Modal -->
+      <div id="projectModal" class="welcome-modal" style="display: none;">
+          <div class="modal-content" style="max-width: 700px;">
+              <div id="modalContent">
+                  <!-- Dynamic content will be inserted here -->
+              </div>
+              <button class="btn btn-secondary" onclick="closeProjectModal()" style="margin-top: 1rem;">
+                  <i class="fas fa-times"></i> Close
+              </button>
+          </div>
+      </div>
+      <script src="script.js"></script>
   </body>
 </html>
