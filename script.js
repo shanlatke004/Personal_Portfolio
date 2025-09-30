@@ -163,13 +163,6 @@ let currentTheme = 'light';
             const themeIcon = document.querySelector('.theme-toggle i');
             themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
         }
-        function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
         function downloadCV() {
             // In a real implementation, this would download the actual CV
             alert('CV download would start here. Please contact me directly for my resume.');
