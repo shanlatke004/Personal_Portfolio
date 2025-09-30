@@ -229,6 +229,13 @@ let currentTheme = 'light';
               modal.style.display = 'flex';
           }
 
+          function toggleMenu() {
+            const menu = document.querySelector(".menu-links");
+            const icon = document.querySelector(".hamburger-icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+          }
+
           function closeProjectModal() {
               document.getElementById('projectModal').style.display = 'none';
           }
@@ -288,10 +295,5 @@ let currentTheme = 'light';
               document.body.style.opacity = '1';
               document.body.style.transition = 'opacity 0.5s ease';
           });
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
-}
+
 
