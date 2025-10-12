@@ -193,7 +193,10 @@ let currentTheme = 'light';
 
           function downloadCV() {
               // In a real implementation, this would download the actual CV
-              alert('CV download would start here. Please contact me directly for my resume.');
+              const link = document.createElement('a');
+              link.href = './assets/ShantanuLatkeResume.pdf'; // Path to your CV file
+              link.download = 'ShantanuLatkeResume.pdf'; // The filename for the download
+              link.click();
           }
 
           function openProjectModal(projectKey) {
